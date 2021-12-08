@@ -4,6 +4,7 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.Test;
 import qa.guru.restbackend.domain.UserInfo;
 
+import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -19,12 +20,14 @@ public class BankControllerTest {
 
     @Test
     void bankControllerTest() {
-       UserInfo[] userInfos = spec.get("user/getAll")
+        UserInfo[] userInfos = spec.get("user/getAll")
                 .then()
                 .statusCode(200)
                 .extract()
                 .response()
                 .as(UserInfo[].class);
+        System.out.println(Arrays.toString(userInfos));
+
 
         Stream.of(userInfos)
                 .filter(userInfo -> userInfo.getUsername().equals("Pasha"))

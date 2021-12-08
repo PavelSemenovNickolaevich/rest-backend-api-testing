@@ -10,7 +10,6 @@ import qa.guru.restbackend.domain.UserInfo;
 import qa.guru.restbackend.exception.InvalidUsernameException;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -27,7 +26,7 @@ public class BankController {
     @PostMapping("/user/login")
     @ApiOperation("Authorization")
     public UserInfo doLogin(@RequestBody LoginInfo loginInfo) {
-        if(loginInfo.getUserName().equals("Pasha")) {
+        if (loginInfo.getUserName().equals("Pasha")) {
             return UserInfo.builder()
                     .loginDate(new Date())
                     .username(loginInfo.getUserName())
