@@ -18,6 +18,12 @@ repositories {
     mavenCentral()
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'qa.guru.restbackend.RestBackendApplication.java'
+    }
+}
+
 dependencies {
    implementation 'org.springframework.boot:spring-boot-starter-web'
    implementation 'io.springfox:springfox-boot-starter:3.0.0'

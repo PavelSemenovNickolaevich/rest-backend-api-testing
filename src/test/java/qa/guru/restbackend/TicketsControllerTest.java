@@ -98,10 +98,10 @@ public class TicketsControllerTest {
                 .body(
                         "[0][0].city_name", is("Moscow"),
                         "[0][0].airport_name", is("Domodedovo"),
-                        "[0][0].date", is(1611522000000L),
+                        "[0][0].date", is(1611532800000L),
                         "[0][1].city_name", is("SaintP"),
                         "[0][1].airport_name", is("Pulkovo"),
-                        "[0][1].date", is(1611522000000L)
+                        "[0][1].date", is(1611532800000L)
                 );
 
         System.out.println(Arrays.stream(cityInfosArr).findFirst());
