@@ -11,11 +11,11 @@ pipeline {
                      sh 'docker build . '
                 }
             }
+        }
             stage('Gradle Test') {
                  steps {
                      sh 'gradle clean test'
             }
         }
     }
-}
 }
