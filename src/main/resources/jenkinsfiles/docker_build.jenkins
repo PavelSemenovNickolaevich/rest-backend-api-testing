@@ -3,9 +3,7 @@ pipeline {
 
     stages {
         stage('Create docker image') {
-             agent {
-                    docker { image 'node:16.13.1-alpine' }
-                }
+                agent { dockerfile true }
             steps {
                 echo "==================== start building image ========================"
 
