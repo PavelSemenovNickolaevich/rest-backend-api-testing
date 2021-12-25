@@ -3,10 +3,11 @@ pipeline {
 
     stages {
         stage('Create docker image') {
-                agent { dockerfile true }
+                agent { label 'master' }
             steps {
                 echo "==================== start building image ========================"
 
+                     sh 'docker images'
                      sh 'docker build -t  api-diplom -f Dockerfile .'
                      sh 'docker images'
 
