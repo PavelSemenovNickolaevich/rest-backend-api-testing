@@ -19,4 +19,4 @@ RUN cd rest-backend-api-testing
 CMD pwd
 
 CMD ls -la
-RUN cd rest-backend-api-testing && gradle test
+CMD cd rest-backend-api-testing && gradle tickets
