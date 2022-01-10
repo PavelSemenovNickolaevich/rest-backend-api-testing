@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  app:
+    build: spring
+    image: app_run
+    container_name: springboot
+    ports:
+    - "8080:8080"
+  test_runner:
+    build: test
+#      context: ../src/test/java/qa/guru/restbackend/TicketsControllerTest.java
+#      dockerfile: test
+    image: tests_run
+    depends_on:
+      - app
+    container_name: tests_works
+    network_mode: "host"
+

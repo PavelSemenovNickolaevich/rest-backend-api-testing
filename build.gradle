@@ -43,3 +43,14 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+tasks.withType(Test) {
+    systemProperties(System.getProperties())
+    useJUnitPlatform()
+}
+
+task tickets(type: Test) {
+    useJUnitPlatform {
+        includeTags 'TicketsApiTest'
+    }
+}

@@ -4,6 +4,7 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import qa.guru.restbackend.entity.City;
@@ -30,6 +31,7 @@ public class TicketsControllerTest {
             .contentType(ContentType.JSON)
             .log().all();
 
+    @Tag("TicketsApiTest")
     @Test
     void ticketsControllerGetAllTest() {
 
@@ -50,6 +52,7 @@ public class TicketsControllerTest {
                 .asString();
     }
 
+    @Tag("TicketsApiTest")
     @Test
     void ticketsControllerDeparturesTest() {
         City[][] cityInfosDep = spec.get("tickets/getAllDepartures")
@@ -83,6 +86,7 @@ public class TicketsControllerTest {
         assertThat(list2).hasSize(3);
     }
 
+    @Tag("TicketsApiTest")
     @Test
     void ticketsControllerArrivalsTest() {
         City[][] cityInfosArr = spec.get("tickets/getAllArrivals")
@@ -111,6 +115,7 @@ public class TicketsControllerTest {
         System.out.println(Arrays.deepToString(cityInfosArr));
     }
 
+    @Tag("TicketsApiTest")
     @Test
     void addTicketInTicketsStorage() {
         Data data = new Data();
@@ -136,6 +141,7 @@ public class TicketsControllerTest {
 
     }
 
+    @Tag("TicketsApiTest")
     @Test
     void addEmptyBody() {
         spec
@@ -145,6 +151,7 @@ public class TicketsControllerTest {
                 .body("error", is("Bad Request"));
     }
 
+    @Tag("TicketsApiTest")
     @Test
     void getTicketsByFilteredPriceTest() {
         int minPrice = 400;
