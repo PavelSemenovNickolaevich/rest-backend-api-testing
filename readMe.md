@@ -78,3 +78,7 @@ docker-compose up --build
 Подергать API можно или через swagger или через POSTMAN
 
 ![Postman](src/main/resources/pictures/Postman.png)
+
+Запуск двух контейнеров : один с сервисом, другой - с тестами
+
+![result](src/main/resources/pictures/result.png)
