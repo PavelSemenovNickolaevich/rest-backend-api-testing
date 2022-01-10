@@ -156,6 +156,19 @@ public class TicketsControllerTest {
     void getTicketsByFilteredPriceTest() {
         int minPrice = 400;
         int maxPrice = 999;
+
+        String response = spec
+                .queryParam("minPrice", minPrice)
+                .queryParam("maxPrice", maxPrice)
+                .get("tickets/filterByPrice")
+                .then()
+                .statusCode(200)
+                .extract()
+                .body()
+                .asString();
+
+        System.out.println(response);
+
         spec
                 .queryParam("minPrice", minPrice)
                 .queryParam("maxPrice", maxPrice)
