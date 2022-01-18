@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 
 import static io.restassured.RestAssured.with;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.is;
 
 
 @SpringBootTest
